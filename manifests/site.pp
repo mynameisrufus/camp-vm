@@ -1,4 +1,7 @@
+import "ruby.pp"
+
 node default {
+
   include git
   include nginx
   include postgresql::server
@@ -13,12 +16,13 @@ node default {
   }
 
   nginx::resource::vhost { 'rack.puppetlabs.com':
-    ensure   => present,
+    ensure => present,
     proxy  => 'http://puppet_rack_app',
   }
 
   postgresql::db { 'tweeter':
-    user     => 'tweeter',
-    password => postgresql_password('password', 'tweeter'),
+    user     => 'vagrant',
+    password => postgresql_password('password', 'vagrant'),
   }
-} 
+
+}
