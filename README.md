@@ -14,6 +14,8 @@ puppet module install ripienaar/concat --modulepath modules
 
 ## Gem mirror
 
+https://github.com/rubygems/rubygems-mirror
+
 ```
 vagrant ssh
 cd ~/rubygems-mirror/
@@ -21,6 +23,8 @@ rake mirror:update
 ```
 
 ## NPM mirror
+
+http://www.idimmu.net/2013/06/20/how-to-create-an-npm-repository-mirror/
 
 ```
  curl -X POST http://127.0.0.1:5984/_replicate -d '{"source":"http://isaacs.iriscouch.com/registry/", "target":"registry", "continuous":true, "create_target":true}' -H "Content-Type: application/json"
