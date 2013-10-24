@@ -55,7 +55,7 @@ file { "/home/vagrant/rubygems-gems":
 }
 
 file { "/home/vagrant/.gem/.mirrorrc":
-  source => 'puppet:///modules/rubygems/mirrorrc',
+  source => 'puppet:///modules/camp/gems/mirrorrc',
   mode    => 750,
   owner   => vagrant,
   group   => vagrant,
