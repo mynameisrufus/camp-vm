@@ -40,11 +40,11 @@ rbenv::gem { "net-http-persistent":
   ruby => "2.0.0-p247",
 }
 
-vcsrepo { '/home/vagrant/rubygems-mirror':
-  ensure   => present,
-  provider => git,
-  source   => 'https://github.com/rubygems/rubygems-mirror.git',
-  revision => 'master',
+file { "/home/vagrant/.gem":
+  ensure => "directory",
+  mode    => 750,
+  owner   => vagrant,
+  group   => vagrant,
 }
 
 file { "/home/vagrant/rubygems-gems":

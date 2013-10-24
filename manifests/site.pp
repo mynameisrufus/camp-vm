@@ -1,11 +1,19 @@
-import "ruby.pp"
-import "node.pp"
-
 node default {
 
   include git
+
+  vcsrepo { '/home/vagrant/rubygems-mirror':
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/rubygems/rubygems-mirror.git',
+    revision => 'master',
+  }
+
   include nginx
   include postgresql::server
+
+  import "ruby.pp"
+  import "node.pp"
 
   # APPS
   #
