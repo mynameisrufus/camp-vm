@@ -2,6 +2,7 @@ node default {
 
   include git
 
+  # I DONT KNOW WHY BUT THIS DOES NOT CARE IF GIT IS NOT INSTALLED GGGRRRR!
   vcsrepo { '/home/vagrant/rubygems-mirror':
     ensure   => present,
     provider => git,
